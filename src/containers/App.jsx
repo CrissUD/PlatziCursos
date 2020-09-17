@@ -12,19 +12,25 @@ const App = () => (
     <Header />
     <Search />
 
-    <Categories>
+    <Categories title='Backend'>
       <Carousel>
         <Item />
         <Item />
         <Item />
         <Item />
       </Carousel>
+    </Categories>
+
+    <Categories title='Frontend'>
       <Carousel>
         <Item />
         <Item />
         <Item />
         <Item />
       </Carousel>
+    </Categories>
+
+    <Categories title='Security'>
       <Carousel>
         <Item />
         <Item />
