@@ -1,6 +1,6 @@
 .header {
   align-items: center;
-  background: #8f57fd;
+  background: #1C3643;
   color: white;
   display: flex;
   height: 100px;
@@ -21,11 +21,12 @@
 .header__menu ul {
   display: none;
   list-style: none;
+  background-color: #1C3643;
   margin: 0px 0px 0px -14px;
-  padding: 0px;
+  padding: 5px;
   position: absolute;
-  width: 100px;
-  text-align: right;
+  width: 120px;
+  text-align: center;
 }
 
 .header__menu:hover ul, ul:hover {

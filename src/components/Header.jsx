@@ -1,6 +1,6 @@
 import React from 'react';
 import '../assets/styles/components/Header.scss';
-import logo from '../assets/images/logo-platzi-video-BW2.png';
+import logo from '../assets/images/logo-platzi-video-BW3.png';
 import user from '../assets/images/user-icon.jpg';
 
 const Header = () => (
