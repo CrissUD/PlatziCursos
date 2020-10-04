@@ -26,3 +26,7 @@ A continuación se muestra el resultado de la aplicación de imágenes de platzi
     <img  src='https://i.imgur.com/7EWaq97.png'>
     <p>Resultado HomePage de la aplicación de imágenes de Platzi.</p>
 </div>
+
+```javascript
+npx json-server --watch initialState.json
+```

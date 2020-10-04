@@ -1,22 +1,19 @@
 import React from 'react';
 import UseInitialState from '../hooks/UseInitialState';
-import Header from '../components/Header';
 import Search from '../components/Search';
 import Categories from '../components/Categories';
 import Carousel from '../components/Carousel';
 import Item from '../components/Item';
-import Footer from '../components/Footer';
 import '../assets/styles/App.scss';
 
 const API = 'http://localhost:3000/initialState';
 
-const App = () => {
+const Home = () => {
 
   const [videos, categories] = UseInitialState(API);
 
   return (
     <div className='app'>
-      <Header />
       <Search />
       {
         categories.map((category) => (
@@ -57,10 +54,8 @@ const App = () => {
           }
         </Carousel>
       </Categories> */}
-
-      <Footer />
     </div>
   );
 };
 
-export default App;
+export default Home;
