@@ -1,26 +1,22 @@
 import React from 'react';
-import UseInitialState from '../hooks/UseInitialState';
+import { connect } from 'react-redux';
 import Search from '../components/Search';
 import Categories from '../components/Categories';
 import Carousel from '../components/Carousel';
 import Item from '../components/Item';
 import '../assets/styles/App.scss';
 
-const API = 'http://localhost:3000/initialState';
-
-const Home = () => {
-
-  const [videos, categories] = UseInitialState(API);
-
+const Home = ({ categories }) => {
+  const nameList = Object.keys(categories);
   return (
     <div className='app'>
       <Search />
       {
-        categories.map((category) => (
-          videos[category].length > 0 && (
+        nameList.map((category) => (
+          categories[category].length > 0 && (
             <Categories key={category} title={category}>
               <Carousel>
-                {videos[category].map((video) => (
+                {categories[category].map((video) => (
                   // eslint-disable-next-line react/jsx-props-no-spreading
                   <Item key={video.id} {...video} />
                 ))}
@@ -58,4 +54,10 @@ const Home = () => {
   );
 };
 
-export default Home;
+const mapStateToProps = (state) => {
+  return {
+    categories: state.categories,
+  };
+};
+
+export default connect(mapStateToProps, null)(Home);
