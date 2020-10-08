@@ -19,9 +19,9 @@ const Home = ({ categories }) => {
                 {categories[category].map((video) => (
                   (category === 'myList') ?
                   // eslint-disable-next-line react/jsx-props-no-spreading
-                    (<Item key={video.id} {...video} isFavorite={true} />) :
+                    (<Item key={video.id} {...video} isFavorite />) :
                   // eslint-disable-next-line react/jsx-props-no-spreading
-                    (<Item key={video.id} {...video} isFavorite={false} />)
+                    (<Item key={video.id} {...video} />)
                 ))}
               </Carousel>
             </Categories>
@@ -33,7 +33,6 @@ const Home = ({ categories }) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     categories: state.categories,
   };

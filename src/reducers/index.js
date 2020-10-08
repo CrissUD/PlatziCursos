@@ -21,6 +21,21 @@ const reducer = (state, action) => {
           myList: state.categories.myList.filter((item) => item.id !== action.payLoad),
         },
       };
+    case actions.loginRequest:
+      return {
+        ...state,
+        user: action.payLoad,
+      };
+    case actions.logoutRequest:
+      return {
+        ...state,
+        user: action.payLoad,
+      };
+    case actions.registerRequest:
+      return {
+        ...state,
+        user: action.payLoad,
+      };
     default:
       return state;
   }
