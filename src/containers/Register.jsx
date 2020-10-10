@@ -30,21 +30,21 @@ const Register = (props) => {
         <h2>Regístrate</h2>
         <form className='register__container--form' onSubmit={handleSubmit}>
           <input
-            className='input'
+            className='input inpL'
             name='nombre'
             type='text'
             placeholder='Nombre'
             onChange={handleInput}
           />
           <input
-            className='input'
+            className='input inpL'
             name='email'
             type='text'
             placeholder='Correo'
             onChange={handleInput}
           />
           <input
-            className='input'
+            className='input inpL'
             name='password'
             type='password'
             placeholder='Contraseña'

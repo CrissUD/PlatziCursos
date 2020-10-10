@@ -36,6 +36,16 @@ const reducer = (state, action) => {
         ...state,
         user: action.payLoad,
       };
+    case actions.setHeader:
+      return {
+        ...state,
+        isFormH: action.payLoad,
+      };
+    case actions.setFooter:
+      return {
+        ...state,
+        isFormF: action.payLoad,
+      };
     case actions.getVideoSource:
       return {
         ...state,

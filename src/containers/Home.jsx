@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import { connect } from 'react-redux';
+import { setHeader, setFooter } from '../actions/index';
 import Search from '../components/Search';
 import Categories from '../components/Categories';
 import Carousel from '../components/Carousel';
 import Item from '../components/Item';
 import '../assets/styles/App.scss';
 
-const Home = ({ categories }) => {
+const Home = ({ categories, setHeader, setFooter }) => {
   const nameList = Object.keys(categories);
+
+  useLayoutEffect(() => {
+    setHeader(false);
+    setFooter(false);
+  }, []);
+
   return (
     <div className='app'>
       <Search />
@@ -38,4 +45,9 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, null)(Home);
+const mapDispatchToProps = {
+  setHeader,
+  setFooter,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

@@ -1,6 +1,8 @@
 {
   "user": {},
   "playing": {},
+  "isFormH": false,
+  "isFormF": false,
   "categories": {
     "myList": [],
     "technology": [

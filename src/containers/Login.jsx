@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { loginRequest } from '../actions/index';
+import { loginRequest, setHeader, setFooter } from '../actions/index';
 import google from '../assets/images/google-icon.png';
 import twitter from '../assets/images/twitter-icon.png';
 import '../assets/styles/components/Login.scss';
@@ -11,6 +11,11 @@ const Login = (props) => {
   const [form, setValues] = useState({
     email: '',
   });
+
+  useLayoutEffect(() => {
+    props.setHeader(true);
+    props.setFooter(true);
+  }, []);
 
   const handleInput = (event) => {
     setValues({
@@ -31,14 +36,14 @@ const Login = (props) => {
         <h2>Inicia sesión</h2>
         <form className='login__container--form' onSubmit={handleSubmit}>
           <input
-            className='input'
+            className='input inpL'
             name='email'
             type='text'
             placeholder='Correo'
             onChange={handleInput}
           />
           <input
-            className='input'
+            className='input inpL'
             name='password'
             type='password'
             placeholder='Contraseña'
@@ -76,6 +81,8 @@ const Login = (props) => {
 
 const mapDispatchToProps = {
   loginRequest,
+  setHeader,
+  setFooter,
 };
 
 export default connect(null, mapDispatchToProps)(Login);

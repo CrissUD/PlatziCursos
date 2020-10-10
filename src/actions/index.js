@@ -5,6 +5,8 @@ export const actions = {
   logoutRequest: 'LOGOUT_REQUEST',
   registerRequest: 'REGISTER_REQUEST',
   getVideoSource: 'GET_VIDEO_SOURCE',
+  setHeader: 'SET_HEADER',
+  setFooter: 'SET_FOOTER',
 };
 
 export const setFavorite = (payLoad) => ({
@@ -34,5 +36,15 @@ export const registerRequest = (payLoad) => ({
 
 export const getVideoSource = (payLoad) => ({
   type: actions.getVideoSource,
+  payLoad,
+});
+
+export const setHeader = (payLoad) => ({
+  type: actions.setHeader,
+  payLoad,
+});
+
+export const setFooter = (payLoad) => ({
+  type: actions.setFooter,
   payLoad,
 });

@@ -7,17 +7,18 @@ import '../assets/styles/components/Player.scss';
 const Player = (props) => {
   // eslint-disable-next-line react/destructuring-assignment
   const { id } = props.match.params;
+  const { playing } = props;
 
   useLayoutEffect(() => {
     props.getVideoSource(id);
   }, []);
-  console.log(props.playing)
-  const hasPlaying = Object.keys(props.playing).length > 0;
+
+  const hasPlaying = Object.keys(playing).length > 0;
 
   return hasPlaying ? (
     <div className='Player'>
       <video controls autoPlay muted>
-        <source src={props.playing.source} type='video/mp4' />
+        <source src={playing.source} type='video/mp4' />
       </video>
       <div className='Player-back'>
         <button type='button' onClick={() => props.history.goBack()}>regresar</button>

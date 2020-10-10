@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import classNames from 'classnames';
 import { logoutRequest } from '../actions/index';
 import gravatar from '../utils/gravatar';
 import '../assets/styles/components/Header.scss';
@@ -8,7 +9,7 @@ import logo from '../assets/images/logo-platzi-video-BW3.png';
 import userImage from '../assets/images/user-icon.png';
 
 const Header = (props) => {
-  const { user } = props;
+  const { user, isFormH } = props;
 
   const hasUser = Object.keys(user).length > 0;
 
@@ -16,8 +17,12 @@ const Header = (props) => {
     props.logoutRequest({});
   };
 
+  const headerClass = classNames('header', {
+    isFormH,
+  });
+
   return (
-    <header className='header'>
+    <header className={headerClass}>
       <Link to='/'>
         <img className='header__img' src={logo} alt='Platzi Video' />
       </Link>
@@ -48,6 +53,7 @@ const Header = (props) => {
 const mapStateToProps = (state) => {
   return {
     user: state.user,
+    isFormH: state.isFormH,
   };
 };
 
