@@ -4,6 +4,7 @@ export const actions = {
   loginRequest: 'LOGIN_REQUEST',
   logoutRequest: 'LOGOUT_REQUEST',
   registerRequest: 'REGISTER_REQUEST',
+  getVideoSource: 'GET_VIDEO_SOURCE',
 };
 
 export const setFavorite = (payLoad) => ({
@@ -28,5 +29,10 @@ export const logoutRequest = (payLoad) => ({
 
 export const registerRequest = (payLoad) => ({
   type: actions.registerRequest,
+  payLoad,
+});
+
+export const getVideoSource = (payLoad) => ({
+  type: actions.getVideoSource,
   payLoad,
 });

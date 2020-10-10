@@ -36,6 +36,13 @@ const reducer = (state, action) => {
         ...state,
         user: action.payLoad,
       };
+    case actions.getVideoSource:
+      return {
+        ...state,
+        playing: state.categories.technology.find((item) => item.id === Number(action.payLoad)) ||
+        state.categories.cities.find((item) => item.id === Number(action.payLoad)) ||
+        [],
+      };
     default:
       return state;
   }
